@@ -11,7 +11,7 @@ function renderList(){
         html += `
         <div class="movieRendered">
             <label for="${genres}">${genres}</label>
-            <input type="radio" id="${genres}" name="genres" value="${genres }">
+            <input class="movieRendered" type="radio" id="${genres}" name="genres" value="${genres }">
         </div>
     `
     }
