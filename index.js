@@ -19,9 +19,13 @@ function selectedMovieGenre(e){
     
 }
 function movieObjectArray(){
-    let movieChoice = document.querySelector('input[type="radio"]:checked')
-    console.log(movieChoice)
+    let movieChoice = document.querySelector('input[type="radio"]:checked').value
+    const matchMovieArray = moviesData.filter(function(movie){
+        return movie.genreTags.includes(movieChoice)
+    })
+    console.log(matchMovieArray)
 }
+    
 
 
 
