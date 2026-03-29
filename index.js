@@ -19,18 +19,39 @@ function selectedMovieGenre(e){
     
 }
 function movieObjectArray(){
-    let movieChoice = document.querySelector('input[type="radio"]:checked').value
+    const selectedRadio = document.querySelector('input[type="radio"]:checked')
+
+    if(!selectedRadio){
+        return []
+    }
+
+    const movieChoice = selectedRadio.value
+
     const matchMovieArray = moviesData.filter(function(movie){
         return movie.genreTags.includes(movieChoice)
     })
-    console.log(matchMovieArray)
+
+    return matchMovieArray
 }
-    
 
+function singleMovieSelection(){
+    let movieArray = movieObjectArray()
 
+    if(movieArray.length === 0){
+        return null
+    }
+
+    if(movieArray.length === 1){
+        return movieArray[0]
+    } else {
+        let randomChoice = Math.floor(Math.random() * movieArray.length)
+        return movieArray[randomChoice]
+    }
+}
 
 function renderedMovie(){
-    const movieSelected = movieObjectArray()
+    const movieSelected = singleMovieSelection()
+    console.log(movieSelected)
 }
 
 
