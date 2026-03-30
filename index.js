@@ -51,6 +51,9 @@ function singleMovieSelection(){
 
 function renderedMovie(){
     const movieSelected = singleMovieSelection()
+    renderMovie.innerHTML = `<p class="movieSelected">The movie that was selected for you is ${movieSelected.title} </p>`
+    submitEl.style.display = 'none'
+    moviesEl.style.display = 'none'
     console.log(movieSelected)
 }
 
